@@ -1,19 +1,18 @@
 package reduction
 
 import (
-  "github.com/skelterjohn/go.matrix"
+  matrix "github.com/skelterjohn/go.matrix"
+  "fmt"
 )
 
-func Reduct(exp List) ret int {
-
+func Reduct() int {
   ret := 0
-  s := []
-  for i:=exp[0]; i >=0; i-- {
-    s[i] = i
 
-  }
-  A, err := ParseMatlab(s)
-
-
-  return ret;
+  s := `[1 2 3;4 5 6]`
+	A, err := matrix.ParseMatlab(s)
+	Ar := matrix.MakeDenseMatrix([]float64{1,2,3,4,5,6}, 2, 3)
+  fmt.Print(A)
+  fmt.Print(err)
+  fmt.Print(Ar)
+  return ret
 }

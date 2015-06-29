@@ -5,8 +5,6 @@ import (
     "fmt"
   )
 
-
-
 func main() {
 
   result := reduction.Reduct([15,10,5,1])
